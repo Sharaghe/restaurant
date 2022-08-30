@@ -1,6 +1,7 @@
 import createElement from './functions';
 
-const home = function(){
+const contact = function(){
+
 
     const main = createElement("main");
     const mainDiv = createElement("div", "content");
@@ -14,4 +15,4 @@ const home = function(){
     return main;
 }
 
-export default home;
+export default contact;
