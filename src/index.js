@@ -1,4 +1,6 @@
 import home from './home.js';
+import contact from './contact.js';
+import menu from './menu.js';
 import createElement from './functions';
 
 const mainDiv = document.querySelector('div#content');
@@ -21,8 +23,8 @@ menuLink.addEventListener("click", () => linkClicked("menu"));
 li2.appendChild(menuLink);
 
 const li3 = createElement("li");
-let aboutLink = createElement("a", "", "About");
-aboutLink.addEventListener("click", () => linkClicked("about"));
+let aboutLink = createElement("a", "", "Contact");
+aboutLink.addEventListener("click", () => linkClicked("contact"));
 li3.appendChild(aboutLink);
 
 ul.appendChild(li1);
@@ -33,5 +35,17 @@ mainDiv.appendChild(header);
 mainDiv.appendChild(home());
 
 function linkClicked(site){
-    console.log(site);
+    clearContent();
+    switch(site){
+        case "home": mainDiv.appendChild(home()); break;
+        case "contact": mainDiv.appendChild(contact()); break;
+        case "menu": mainDiv.appendChild(menu()); break;
+    }
+}
+
+function clearContent(){
+    let main = document.querySelector('main');
+    if(main){
+        main.remove();
+    }
 }
