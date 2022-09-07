@@ -37,9 +37,9 @@ mainDiv.appendChild(home());
 function linkClicked(site){
     clearContent();
     switch(site){
-        case "home": mainDiv.appendChild(home()); break;
-        case "contact": mainDiv.appendChild(contact()); break;
-        case "menu": mainDiv.appendChild(menu()); break;
+        case "home": setLinkActive(homeLink); mainDiv.appendChild(home()); break;
+        case "contact": setLinkActive(aboutLink); mainDiv.appendChild(contact()); break;
+        case "menu": setLinkActive(menuLink); mainDiv.appendChild(menu()); break;
     }
 }
 
@@ -47,5 +47,12 @@ function clearContent(){
     let main = document.querySelector('main');
     if(main){
         main.remove();
+        homeLink.classList.remove("highlighted");
+        aboutLink.classList.remove("highlighted");
+        menuLink.classList.remove("highlighted");
     }
+}
+
+function setLinkActive(linkElement){
+    linkElement.classList.add("highlighted");
 }
