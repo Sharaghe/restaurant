@@ -79,3 +79,16 @@ ul li a:hover{
     font-size: 1.5rem; 
     line-height: 2.5rem;
 }
+
+.item-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item-wrapper > div:nth-of-type(odd){
+    text-align: left;
+}
+
+.item-wrapper > div:nth-of-type(even){
+    text-align: right;
+}
